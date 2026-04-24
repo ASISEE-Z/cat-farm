@@ -1,3 +1,16 @@
 {
-    "godotTools.editorPath.godot4": "d:\\Godot\\Godot_v4.6.1-stable_win64\\Godot_v4.6.1-stable_win64.exe"
+    "godotTools.editorPath.godot4": "d:\\Godot\\Godot_v4.6.1-stable_win64\\Godot_v4.6.1-stable_win64.exe",
+
+    // 显示空格小点、Tab箭头、换行符
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+
+    // Tab 就是Tab，绝不自动转空格
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": false,
+
+    // GDScript 单独强制Tab缩进
+    "[gdscript]": {
+    "editor.insertSpaces": false
+    }
 }
