@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://lnbxtsjq02s6" path="res://scenes/ui/game_ui_theme.tres" id="1_fnqby"]
 [ext_resource type="Texture2D" uid="uid://7mb7rjkuimdu" path="res://assets/ui/Sprite sheet for Basic Pack.png" id="2_25t5k"]
+[ext_resource type="Script" uid="uid://cmnn4q260gbng" path="res://scripts/ui/day_and_night_panel.gd" id="2_xc6ft"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc6ft"]
 atlas = ExtResource("2_25t5k")
@@ -11,6 +12,7 @@ region = Rect2(261, 2, 7, 12)
 layout_mode = 3
 anchors_preset = 0
 theme = ExtResource("1_fnqby")
+script = ExtResource("2_xc6ft")
 
 [node name="DayPanel" type="PanelContainer" parent="." unique_id=1875737154]
 layout_mode = 0
@@ -27,7 +29,7 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="DayPanel/MarginContainer" unique_id=936534592]
+[node name="DayLabel" type="Label" parent="DayPanel/MarginContainer" unique_id=936534592]
 layout_mode = 2
 theme_type_variation = &"DayAndNightLabel"
 text = "Day 0"
@@ -47,10 +49,10 @@ theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 theme_override_constants/margin_bottom = 3
 
-[node name="Label" type="Label" parent="TimePanel/MarginContainer" unique_id=1286299076]
+[node name="TimeLabel" type="Label" parent="TimePanel/MarginContainer" unique_id=1286299076]
 layout_mode = 2
 theme_type_variation = &"DayAndNightLabel"
-text = "12:00"
+text = "00:00"
 
 [node name="Control" type="Control" parent="." unique_id=1217214659]
 anchors_preset = 0
@@ -64,6 +66,8 @@ offset_right = 22.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 toggle_mode = true
+action_mode = 0
+keep_pressed_outside = true
 
 [node name="TextureRect" type="TextureRect" parent="Control/NormalSpeedButton" unique_id=1228717600]
 layout_mode = 1
@@ -87,6 +91,7 @@ offset_right = 46.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 toggle_mode = true
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/FastSpeedButton" unique_id=1290797752]
 layout_mode = 1
@@ -125,6 +130,7 @@ offset_right = 70.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 toggle_mode = true
+action_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="Control/CheetahSpeedButton" unique_id=1853717336]
 layout_mode = 1
@@ -170,3 +176,7 @@ offset_bottom = 6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_xc6ft")
+
+[connection signal="pressed" from="Control/NormalSpeedButton" to="." method="_on_normal_speed_button_pressed"]
+[connection signal="pressed" from="Control/FastSpeedButton" to="." method="_on_fast_speed_button_pressed"]
+[connection signal="pressed" from="Control/CheetahSpeedButton" to="." method="_on_cheetah_speed_button_pressed"]
