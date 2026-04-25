@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://lnbxtsjq02s6" path="res://scenes/ui/game_ui_theme.tres" id="1_ko4ld"]
 [ext_resource type="PackedScene" uid="uid://mdgcolv0lqux" path="res://scenes/ui/tools_panel.tscn" id="2_nwe1t"]
+[ext_resource type="PackedScene" uid="uid://bjqxlr0oou7tr" path="res://scenes/ui/inventory_panel.tscn" id="3_nwe1t"]
+[ext_resource type="PackedScene" uid="uid://bni7vocvjsvr0" path="res://scenes/ui/day_and_night_panel.tscn" id="4_ucfjb"]
 
 [node name="GameScene" type="CanvasLayer" unique_id=437843676]
 
@@ -17,3 +19,13 @@ theme = ExtResource("1_ko4ld")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+
+[node name="InventoryPanel" parent="MarginContainer" unique_id=1673042210 instance=ExtResource("3_nwe1t")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="DayAndNightPanel" parent="MarginContainer" unique_id=1487684784 instance=ExtResource("4_ucfjb")]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
