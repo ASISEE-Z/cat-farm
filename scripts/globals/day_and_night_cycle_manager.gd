@@ -10,7 +10,7 @@ var game_speed: float = 5.0
 
 var initial_day: int = 1
 var initial_hour: int = 12
-var initial_minute: int = 30
+var initial_minute: int = 00
 
 var time: float = 0.0
 var current_minute: int = -1

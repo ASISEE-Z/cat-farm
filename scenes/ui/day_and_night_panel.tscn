@@ -67,7 +67,6 @@ offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
 toggle_mode = true
 action_mode = 0
-keep_pressed_outside = true
 
 [node name="TextureRect" type="TextureRect" parent="Control/NormalSpeedButton" unique_id=1228717600]
 layout_mode = 1
